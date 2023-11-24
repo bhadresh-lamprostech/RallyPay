@@ -4,24 +4,29 @@
     "slug": "Rallyproject",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/RallyPay.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/RallyPay.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.Rallyproject"
+      "bundleIdentifier": "com.anonymous.Rallyproject",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Allow to access camera.",
+        "NSMicrophoneUsageDescription": "Allow $(PRODUCT_NAME) to access your microphone"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.Rallyproject"
+      "package": "com.anonymous.Rallyproject",
+      "permissions": ["android.permission.CAMERA"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,7 +37,24 @@
         {
           "cameraPermission": "Allow to access camera."
         }
+      ],
+      [
+        "expo-build-properties",
+
+        {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "buildToolsVersion": "33.0.0",
+            "minSdkVersion": 23
+          }
+        }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a29c4f06-103a-46d1-ad4e-6f72012fe5f6"
+      }
+    }
   }
 }
